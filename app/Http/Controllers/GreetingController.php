@@ -20,6 +20,18 @@ class GreetingController extends Controller
             ],compact('response')
         );
     }
+    public function search($query): View
+    {
+        $response = Http::get(`https://dummyjson.com/products/search?$=query`)['products'];
+         return view(
+            'Pages.index',
+            [
+                'title' => 'Home',
+                'content' => 'Home',
+                
+            ],compact('response')
+        );
+    }
     public function show(): View
     {
         return view('Pages.index', [
