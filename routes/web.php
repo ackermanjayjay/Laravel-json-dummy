@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -14,12 +15,15 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function(){
-    return Inertia::render('HomePage',[
-        'title'=> 'Home',
-        'name' => 'Reza',
-        ]);
-});
+
+//Route::get('/', function(){
+  //  return Inertia::render('HomePage',[
+    //    'title'=> 'Home',
+      //  'name' => 'Reza',
+       // ]);
+//});
+
+Route::get('/', [NewsController::class,'index'])->name ('index');
 /*
 Route::get('/', function () {
     return Inertia::render('Welcome', [

@@ -12,7 +12,9 @@ class NewsSeeder extends Seeder
      */
     public function run(): void
     {
-        News::factory(10)->create();
+        News::factory()
+            ->count(10)
+            ->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
